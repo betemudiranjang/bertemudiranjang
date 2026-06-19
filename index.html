@@ -1,10 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bertemu di Ranjang</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bertemu di Ranjang</title>
+    <meta property="og:image" content="https://cdn.scalev.id/uploads/1779350425/IM44jJftpgnppIMk8-PE1A/1779350424692-thumbnail.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://cdn.scalev.id/uploads/1779350425/IM44jJftpgnppIMk8-PE1A/1779350424692-thumbnail.webp" />
 
 <!-- Meta Pixel Code -->
 <script>
@@ -38,756 +43,761 @@ fbq('track', 'PageView');
 </noscript>
 <!-- End Meta Pixel Code -->
 
-<style>
-/* ═══════════════════════════════════════════
-   DESIGN TOKENS — edit here, applies everywhere
-   ═══════════════════════════════════════════ */
-:root {
-  /* PALETTE */
-  --clr-bg:         #0d0d0d;
-  --clr-surface:    #161616;
-  --clr-surface-2:  #1e1e1e;
-  --clr-border:     rgba(255,255,255,.08);
-  --clr-accent:     #c8102e;       /* deep crimson */
-  --clr-accent-2:   #e8c87a;       /* warm gold */
-  --clr-green:      #22c55e;       /* price / CTA */
-  --clr-text:       #f0ede8;       /* off-white */
-  --clr-muted:      #888;
-  --clr-strike:     #ff5b5b;
-
-  /* TYPOGRAPHY */
-  --font-display:   'Playfair Display', serif;
-  --font-body:      'Inter', sans-serif;
-
-  /* SCALE */
-  --text-xs:   11px;
-  --text-sm:   13px;
-  --text-base: 15px;
-  --text-lg:   18px;
-  --text-xl:   22px;
-  --text-2xl:  28px;
-  --text-3xl:  36px;
-
-  /* SPACING */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-8: 32px;
-
-  /* RADIUS */
-  --radius-sm:  6px;
-  --radius-md:  12px;
-  --radius-lg:  18px;
-  --radius-full: 999px;
-
-  /* SHADOW */
-  --shadow-card: 0 4px 24px rgba(0,0,0,.5);
-  --shadow-hover: 0 12px 40px rgba(0,0,0,.7);
-
-  /* TRANSITION */
-  --ease: .22s cubic-bezier(.4,0,.2,1);
-
-  /* LAYOUT */
-  --max-w: 420px;
-}
-
-/* ═══════════════════════════════════════════
-   RESET
-   ═══════════════════════════════════════════ */
-*, *::before, *::after {
-  margin: 0; padding: 0;
-  box-sizing: border-box;
-}
-
-/* ═══════════════════════════════════════════
-   BASE
-   ═══════════════════════════════════════════ */
-body {
-  background: #060606;
-  font-family: var(--font-body);
-  color: var(--clr-text);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-}
-
-a { text-decoration: none; color: inherit; }
-img { display: block; width: 100%; }
-
-/* ═══════════════════════════════════════════
-   PAGE WRAPPER
-   ═══════════════════════════════════════════ */
-.page {
-  width: 100%;
-  max-width: var(--max-w);
-  background: var(--clr-bg);
-  min-height: 100vh;
-  box-shadow: 0 0 60px rgba(200,16,46,.12);
-  overflow: hidden;
-}
-
-/* ═══════════════════════════════════════════
-   HERO
-   ═══════════════════════════════════════════ */
-.hero {
-  position: relative;
-  height: 200px;
-  background: #1a0608;
-  overflow: hidden;
-}
-
-.hero img {
-  height: 100%;
-  object-fit: cover;
-  opacity: .75;
-  filter: saturate(1.2);
-}
-
-/* crimson gradient vignette */
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 30%,
-    rgba(13,13,13,.9) 100%
-  );
-}
-
-/* ═══════════════════════════════════════════
-   AVATAR
-   ═══════════════════════════════════════════ */
-.avatar-wrap {
-  display: flex;
-  justify-content: center;
-  margin-top: -46px;
-  position: relative;
-  z-index: 2;
-}
-
-.avatar {
-  width: 92px;
-  height: 92px;
-  border-radius: 50%;
-  background: var(--clr-surface);
-  border: 3px solid var(--clr-accent);
-  overflow: hidden;
-  box-shadow: 0 0 0 4px rgba(200,16,46,.25), var(--shadow-card);
-}
-
-.avatar img {
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ═══════════════════════════════════════════
-   PROFILE
-   ═══════════════════════════════════════════ */
-.profile {
-  text-align: center;
-  padding: var(--space-4) var(--space-5) var(--space-6);
-}
-
-.profile h1 {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-  font-weight: 900;
-  letter-spacing: -.3px;
-  margin-bottom: var(--space-1);
-  background: linear-gradient(135deg, #f0ede8 30%, var(--clr-accent-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.handle {
-  font-size: var(--text-sm);
-  color: var(--clr-accent);
-  font-weight: 600;
-  letter-spacing: .5px;
-  margin-bottom: var(--space-3);
-}
-
-.desc {
-  font-size: var(--text-sm);
-  color: var(--clr-muted);
-  line-height: 1.7;
-  max-width: 280px;
-  margin: 0 auto;
-}
-
-/* ═══════════════════════════════════════════
-   DIVIDER
-   ═══════════════════════════════════════════ */
-.divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--clr-accent) 50%, transparent);
-  margin: 0 var(--space-5);
-  opacity: .4;
-}
-
-/* ═══════════════════════════════════════════
-   SECTION HEADER
-   ═══════════════════════════════════════════ */
-.sec {
-  padding: var(--space-6) var(--space-5) var(--space-4);
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.sec-label {
-  font-size: var(--text-xs);
-  font-weight: 800;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--clr-accent-2);
-}
-
-.sec-line {
-  flex: 1;
-  height: 1px;
-  background: var(--clr-border);
-}
-
-/* ═══════════════════════════════════════════
-   BUNDLE CARD
-   ═══════════════════════════════════════════ */
-.bundle-wrap {
-  margin: 0 var(--space-5);
-}
-
-.bundle {
-  background: linear-gradient(135deg, #1c0a0e 0%, #1a1010 50%, #1c1008 100%);
-  border: 1px solid rgba(200,16,46,.3);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  position: relative;
-  box-shadow: var(--shadow-card), 0 0 30px rgba(200,16,46,.08);
-  display: flex;
-  flex-direction: column;
-}
-
-/* sheen line */
-.bundle::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--clr-accent-2) 50%, transparent);
-  opacity: .5;
-  z-index: 1;
-}
-
-.bundle-thumb {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background: #2a1010;
-  flex-shrink: 0;
-}
-
-.bundle-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.bundle-info {
-  padding: var(--space-4);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-.bundle-tag {
-  display: inline-block;
-  background: rgba(200,16,46,.2);
-  color: var(--clr-accent);
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(200,16,46,.4);
-  margin-bottom: var(--space-2);
-  width: fit-content;
-}
-
-.bundle-title {
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: var(--space-2);
-}
-
-.bundle-sub {
-  font-size: var(--text-xs);
-  color: var(--clr-muted);
-  margin-bottom: var(--space-3);
-  line-height: 1.5;
-}
-
-.bundle-savings {
-  font-size: var(--text-xs);
-  font-weight: 700;
-  color: var(--clr-green);
-  background: rgba(34,197,94,.1);
-  border: 1px solid rgba(34,197,94,.25);
-  border-radius: var(--radius-full);
-  padding: 3px 10px;
-  display: inline-block;
-  margin-bottom: var(--space-3);
-}
-
-.price-strike {
-  font-size: var(--text-sm);
-  color: var(--clr-strike);
-  text-decoration: line-through;
-  margin-bottom: 2px;
-}
-
-.price-final {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-  color: var(--clr-green);
-  font-weight: 700;
-  margin-bottom: var(--space-3);
-}
-
-/* ═══════════════════════════════════════════
-   BUTTONS
-   ═══════════════════════════════════════════ */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  background: var(--clr-accent);
-  color: #fff;
-  font-size: var(--text-sm);
-  font-weight: 700;
-  padding: 11px var(--space-4);
-  border-radius: var(--radius-sm);
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  transition: background var(--ease), transform var(--ease), box-shadow var(--ease);
-  letter-spacing: .3px;
-  box-shadow: 0 4px 16px rgba(200,16,46,.35);
-}
-
-.btn-primary:hover {
-  background: #e01232;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 22px rgba(200,16,46,.5);
-}
-
-.btn-primary:active { transform: translateY(0); }
-
-.btn-buy {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--clr-accent);
-  color: #fff;
-  font-size: var(--text-xs);
-  font-weight: 700;
-  padding: 8px 14px;
-  border-radius: var(--radius-sm);
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  transition: background var(--ease), transform var(--ease);
-  letter-spacing: .3px;
-}
-
-.btn-buy:hover {
-  background: #e01232;
-  transform: translateY(-1px);
-}
-
-/* ═══════════════════════════════════════════
-   PRODUCT GRID
-   ═══════════════════════════════════════════ */
-.grid {
-  padding: 0 var(--space-5) var(--space-8);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-4);
-}
-
-.product {
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  position: relative;
-  transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
-  display: flex;
-  flex-direction: column;
-}
-
-.product:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(200,16,46,.3);
-}
-
-.pimg-wrap {
-  position: relative;
-  height: 200px;
-  background: #1a0a0a;
-  overflow: hidden;
-}
-
-.pimg-wrap img {
-  height: 100%;
-  object-fit: cover;
-  transition: transform .4s ease;
-}
-
-.product:hover .pimg-wrap img {
-  transform: scale(1.04);
-}
-
-.badge {
-  position: absolute;
-  top: var(--space-2);
-  right: var(--space-2);
-  background: rgba(13,13,13,.85);
-  color: var(--clr-accent-2);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(232,200,122,.25);
-  backdrop-filter: blur(4px);
-}
-
-.p-content {
-  padding: var(--space-3);
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.p-title {
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: var(--space-2);
-  flex: 1;
-}
-
-.p-desc {
-  font-size: var(--text-xs);
-  color: var(--clr-muted);
-  line-height: 1.5;
-  margin-bottom: var(--space-3);
-}
-
-.p-price {
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--clr-green);
-  margin-bottom: var(--space-3);
-}
-
-/* ═══════════════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════════════ */
-footer {
-  border-top: 1px solid var(--clr-border);
-  padding: var(--space-8) var(--space-5);
-  text-align: center;
-  color: var(--clr-muted);
-  font-size: var(--text-xs);
-  line-height: 2.4;
-}
-
-footer a {
-  color: var(--clr-muted);
-  transition: color var(--ease);
-}
-
-footer a:hover { color: var(--clr-text); }
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: var(--space-2) var(--space-4);
-  margin: var(--space-2) 0 var(--space-4);
-}
-
-.powered {
-  font-size: var(--text-xs);
-  color: rgba(255,255,255,.25);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.powered b {
-  display: block;
-  color: rgba(255,255,255,.5);
-  font-size: var(--text-sm);
-  margin-top: 2px;
-  letter-spacing: 0;
-}
-
-/* ═══════════════════════════════════════════
-   MOBILE
-   ═══════════════════════════════════════════ */
-@media (max-width: 420px) {
-  .page { max-width: 100%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    transition: none !important;
-    animation: none !important;
-  }
-}
-</style>
-</head>
-<body>
-
-<div class="page">
-
-  <!-- HERO -->
-  <header class="hero">
-    <img src="sampulcheckout.png" alt="Bertemu di Ranjang">
-  </header>
-
-  <!-- AVATAR -->
-  <div class="avatar-wrap">
-    <div class="avatar">
-      <img src="logobertemu.png" alt="Logo Bertemu di Ranjang">
-    </div>
-  </div>
-
-  <!-- PROFILE -->
-  <section class="profile">
-    <h1>Bertemu di Ranjang</h1>
-    <p class="handle">@bertemudiranjang</p>
-    <p class="desc">Panduan dan edukasi intim untuk pasangan membangun hubungan yang lebih erat, sehat, dan menyenangkan.</p>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- BUNDLE SECTION -->
-  <div class="sec">
-    <span class="sec-label">Bundle</span>
-    <span class="sec-line"></span>
-  </div>
-
-  <div class="bundle-wrap">
-    <div class="bundle">
-      <div class="bundle-thumb">
-        <img src="coverbundlingnew.png" alt="Bundle Premium Eksklusif">
+    <style>
+      :root {
+        --color-bg: #000000;
+        --color-surface: #1f1f1f;
+        --color-border: #1f1f1f;
+        --color-border-soft: #262626;
+        --color-text: #d4d4d4;
+        --color-heading: #ffffff;
+        --color-primary: #8C001a;
+        --color-primary-dark: #ef8f00;
+        --color-primary-soft-bg: #fef2f2;
+        --color-primary-soft-text: #ff9900;
+        --color-accent: #fdba74;
+        --color-success: #22c55e;
+        --color-success-dark: #15803d;
+        --color-gift-muted: #525252;
+        --color-badge: rgba(21, 128, 61, 0.4);
+        --color-track: rgba(255, 255, 255, 0.3);
+        --color-banner-bg: #fefce8;
+        --color-on-light: #000000;
+        --radius-sm: 0.3rem;
+        --radius-md: 0.75rem;
+        --radius-lg: 1rem;
+        --radius-full: 9999px;
+        --font-light: 300;
+        --font-medium: 500;
+        --font-bold: 700;
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-6: 1.5rem;
+        --max-content: 28rem;
+        --header-main-height: 3rem;
+        --header-progress-block: 0.75rem;
+        --header-height: var(--header-main-height);
+        --z-header: 100;
+        --transition: transform 0.2s ease, box-shadow 0.2s ease;
+        --section-enter-duration: 1s;
+        --section-enter-stagger: 0.05s;
+        --shadow-cta: 0 4px 0 var(--color-primary-dark);
+        --shadow-cta-green: 0 4px 0 var(--color-success-dark);
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+      html { font-size: 16px; }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background: var(--color-bg);
+        color: var(--color-text);
+        min-height: 100vh;
+        padding: var(--space-4);
+        padding-top: calc(var(--header-height) + var(--space-4));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      body.has-header-progress {
+        padding-top: calc(var(--header-main-height) + var(--header-progress-block) + var(--space-4));
+      }
+
+      img { max-width: 100%; height: auto; vertical-align: middle; }
+
+      @keyframes section-item-in {
+        from { opacity: 0; transform: translateY(0.75rem); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes wiggle {
+        0%, 85%, 100% { transform: translateX(0) skewX(0deg); }
+        88%  { transform: translateX(-6px) skewX(-4deg); }
+        90%  { transform: translateX(6px) skewX(4deg); }
+        92%  { transform: translateX(-6px) skewX(-1deg); }
+        94%  { transform: translateX(6px) skewX(1deg); }
+        96%  { transform: translateX(-2px); }
+        98%  { transform: translateX(2px); }
+      }
+
+      .cta-wiggle { display: inline-block; width: 100%; animation: wiggle 5s ease-in-out infinite; }
+
+      /* ——— Header ——— */
+      .site-header {
+        position: fixed; top: 0; left: 0; right: 0;
+        display: flex; flex-direction: column;
+        background: var(--color-bg);
+        border-bottom: 1px solid var(--color-border);
+        z-index: var(--z-header);
+      }
+      .site-header__main {
+        display: flex; align-items: center; justify-content: center;
+        height: var(--header-main-height); padding: 0 var(--space-6);
+      }
+      .site-header__logo { height: 1.5rem; width: auto; color: var(--color-heading); font-weight: var(--font-medium); }
+      .site-header__logo span { background-color: var(--color-primary); padding: 0.25rem 0.5rem; color: var(--color-on-light); border-radius: var(--radius-sm); }
+      .site-header__progress[hidden] { display: none; }
+      .site-header__progress-track { height: 0.15rem; background: var(--color-track); overflow: hidden; }
+      .site-header__progress-fill { height: 100%; width: 0%; border-radius: inherit; background: var(--color-primary); transition: width 0.25s ease; }
+
+      /* ——— Section ——— */
+      .section {
+        width: 100%; max-width: var(--max-content);
+        margin-left: auto; margin-right: auto;
+        padding: var(--space-6) var(--space-4);
+        border-radius: var(--radius-sm);
+      }
+      .section--enter > * {
+        animation: section-item-in var(--section-enter-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+      .section--enter > *:nth-child(1)  { animation-delay: calc(var(--section-enter-stagger) * 1); }
+      .section--enter > *:nth-child(2)  { animation-delay: calc(var(--section-enter-stagger) * 2); }
+      .section--enter > *:nth-child(3)  { animation-delay: calc(var(--section-enter-stagger) * 3); }
+      .section--enter > *:nth-child(4)  { animation-delay: calc(var(--section-enter-stagger) * 4); }
+      .section--enter > *:nth-child(5)  { animation-delay: calc(var(--section-enter-stagger) * 5); }
+      .section--enter > *:nth-child(6)  { animation-delay: calc(var(--section-enter-stagger) * 6); }
+      .section--enter > *:nth-child(7)  { animation-delay: calc(var(--section-enter-stagger) * 7); }
+      .section--enter > *:nth-child(8)  { animation-delay: calc(var(--section-enter-stagger) * 8); }
+      .section--enter > *:nth-child(9)  { animation-delay: calc(var(--section-enter-stagger) * 9); }
+      .section--enter > *:nth-child(10) { animation-delay: calc(var(--section-enter-stagger) * 10); }
+      .section--enter > *:nth-child(11) { animation-delay: calc(var(--section-enter-stagger) * 11); }
+      .section--enter > *:nth-child(12) { animation-delay: calc(var(--section-enter-stagger) * 12); }
+      @media (prefers-reduced-motion: reduce) { .section--enter > * { animation: none; } }
+
+      .section--hero { text-align: center; padding: var(--space-6); border-radius: var(--radius-lg); }
+      .section--no-x { padding-left: 0; padding-right: 0; }
+      .stack--mt-6 { margin-top: var(--space-6); }
+
+      /* ——— Typography ——— */
+      .heading-1 { margin: 0 0 var(--space-6); font-size: 1.875rem; line-height: 1.2; font-weight: var(--font-bold); color: var(--color-heading); }
+      .heading-2 { margin: 0 0 var(--space-4); text-align: center; font-size: 1.5rem; line-height: 1.3; font-weight: var(--font-medium); color: var(--color-heading); }
+      .heading-2--mb-6 { margin-bottom: var(--space-6); }
+      .heading-2--mb-2 { margin-bottom: var(--space-2); }
+      .heading-3 { margin: 0 0 var(--space-4); text-align: center; font-size: 1.5rem; line-height: 1.2; font-weight: var(--font-bold); color: var(--color-primary); }
+      .heading-3--package { margin: 0 0 var(--space-2); font-size: 1.125rem; line-height: 1; font-weight: var(--font-bold); color: var(--color-primary); }
+      .text-center { text-align: center; }
+      .text-lead { margin: 0 0 var(--space-6); font-size: 1.25rem; line-height: 1.4; font-weight: var(--font-medium); color: var(--color-heading); }
+      .text-body { margin: 0; line-height: 1.5; }
+      .text-body--mb-6 { margin-bottom: var(--space-6); }
+      .text-accent { color: var(--color-primary); }
+      .text-emphasis { font-weight: var(--font-medium); }
+      .text-small { font-size: 0.875rem; }
+      .text-loader { margin: 0 0 var(--space-2); text-align: center; font-size: 0.875rem; }
+      .text-progress { margin: 0 0 0 var(--space-2); font-size: 0.875rem; color: var(--color-primary); }
+      .font-bold { font-weight: var(--font-bold); }
+      .text-red-strong { color: var(--color-primary); font-weight: var(--font-bold); }
+
+      /* ——— Components ——— */
+      .callout { margin: 0 0 var(--space-6); padding: var(--space-6); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text); line-height: 1.5; }
+      .grid { display: grid; }
+      .grid--1 { grid-template-columns: 1fr; gap: var(--space-3); }
+      .grid--1-gap-3 { grid-template-columns: 1fr; gap: var(--space-3); }
+      .stack { display: flex; flex-direction: column; gap: var(--space-3); }
+      .stack--3 { gap: var(--space-3); }
+      .stack--mb-6 { margin-bottom: var(--space-6); }
+
+      .btn { cursor: pointer; border: none; font: inherit; transition: var(--transition); }
+      .btn:hover { transform: scale(1.03); }
+      .btn--primary { display: block; width: 100%; min-height: 3.5rem; padding: 0 var(--space-3); border-radius: var(--radius-sm); background: var(--color-surface); color: #fff; font-weight: var(--font-medium); border: 2px solid var(--color-primary); }
+      .btn--primary-lg { min-height: 3.5rem; font-size: 1.25rem; }
+
+      .img-rounded { border-radius: var(--radius-md); }
+      .img-rounded--mb-4 { margin-bottom: var(--space-4); }
+      .img-rounded--mb-6 { margin-bottom: var(--space-6); }
+
+      .testimonial { border-left: 3px solid var(--color-primary); padding: var(--space-3); border-radius: var(--radius-md); background: var(--color-surface); }
+      .testimonial__meta { margin-bottom: var(--space-3); }
+      .testimonial__name { font-weight: var(--font-medium); color: var(--color-heading); }
+
+      .video-embed { position: relative; padding-top: 56.25%; margin-bottom: var(--space-4); }
+      .video-embed iframe { border: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+      .progress { display: flex; align-items: center; margin-bottom: var(--space-4); }
+      .progress__track { flex: 1; height: 0.75rem; border-radius: var(--radius-full); background: var(--color-track); overflow: hidden; }
+      .progress__fill { height: 100%; border-radius: var(--radius-full); background: var(--color-primary); transition: width 0.3s ease; }
+
+      /* ——— Package Cards ——— */
+      .package-card {
+        background: var(--color-surface);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+        margin-bottom: var(--space-4);
+      }
+
+      .package-card--row {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-3);
+      }
+
+      .package-card--row .package-card__thumb {
+        flex: 0 0 40%;
+        max-width: 8rem;
+        border-radius: var(--radius-md);
+        object-fit: contain;
+      }
+
+      .package-card__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+      }
+
+      .package-label {
+        font-size: 0.7rem;
+        font-weight: var(--font-bold);
+        color: var(--color-accent);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .package-title {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.3;
+        font-weight: var(--font-bold);
+        color: var(--color-primary);
+      }
+
+      .package-desc {
+        margin: 0;
+        font-size: 0.8rem;
+        line-height: 1.5;
+        color: var(--color-text);
+      }
+
+      .package-footer {
+        margin-top: auto;
+      }
+
+      .price-box { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+      .price-old { font-size: 0.85rem; font-weight: var(--font-bold); color: var(--color-accent); text-decoration: none; }
+      .price-new { font-size: 0.85rem; font-weight: var(--font-bold); color: var(--color-accent); }
+
+      .price-pill {
+        display: inline-flex; margin-top: var(--space-2);
+        padding: var(--space-1) var(--space-2);
+        border-radius: var(--radius-full); font-size: 0.75rem;
+        background: var(--color-badge);
+        color: var(--color-success);
+        font-weight: var(--font-bold);
+      }
+
+      /* ——— Cards wrapper ——— */
+      .cards-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+        margin-bottom: var(--space-6);
+      }
+
+      /* ——— Pricing ——— */
+      .pricing-box { margin-bottom: var(--space-6); border: 1px solid var(--color-primary); border-radius: var(--radius-md); overflow: hidden; text-align: center; background: var(--color-banner-bg); }
+      .pricing-box__ribbon { width: 100%; padding: var(--space-2); background: var(--color-primary); color: #fff; font-size: 0.875rem; font-weight: var(--font-bold); }
+      .pricing-box__body { padding: var(--space-3); color: var(--color-on-light); }
+      .pricing-box__body p { margin: 0.25rem 0; }
+      .price-strike { margin: 0; font-size: 1.875rem; font-weight: var(--font-bold); color: var(--color-primary); text-decoration: line-through; }
+      .price-live { margin: 0; font-size: 1.875rem; font-weight: var(--font-bold); color: var(--color-success-dark); }
+
+      .cta-link { display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 4rem; padding: 0 var(--space-4); border-radius: var(--radius-md); background: var(--color-success); color: #fff; font-size: 0.875rem; font-weight: var(--font-bold); text-decoration: none; box-shadow: var(--shadow-cta-green); transition: var(--transition); }
+      .cta-link:hover { transform: scale(1.03); }
+
+      .info-card { border: 1px solid var(--color-border-soft); border-radius: var(--radius-md); padding: var(--space-6); text-align: center; }
+      .info-card h2 { margin: 0 0 var(--space-2); font-size: inherit; font-weight: var(--font-medium); color: var(--color-heading); }
+      .info-card p { margin: 0; line-height: 1.5; }
+
+      .sticky-bottom { position: sticky; bottom: var(--space-6); }
+
+      .image-wrapper { text-align: center; margin-bottom: var(--space-4); }
+      .section-image { max-width: 220px; width: 100%; height: auto; }
+      .question-image { text-align: center; margin-bottom: var(--space-4); }
+      .question-image img { max-width: 220px; width: 100%; height: auto; }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="site-header__main">
+        <div class="site-header__logo">
+          <img src="logo.jpeg" alt="Logo Bertemu di Ranjang" style="height:30px" />
+        </div>
       </div>
-      <div class="bundle-info">
-        <span class="bundle-tag">⚡ Terlaris</span>
-        <h3 class="bundle-title">Bundle Premium Eksklusif</h3>
-        <p class="bundle-sub">Dari Biasa Menjadi Luar Biasa — Pengakuan 11 Tahun Menjadi Gigolo.</p>
-        <span class="bundle-savings">7 Produk · Hemat Rp 866.000</span>
-        <p class="price-strike">Rp 1.234.000</p>
-        <p class="price-final">Rp 368.000</p>
-        <a class="btn-primary" href="https://kawan.digital/bertemudiranjang/bundles/bundle-premium-eksklusif-skill-11-tahun-menjadi-gigolo" target="_blank">
-          ⚡ Beli Sekarang
+      <div class="site-header__progress" id="headerProgress" hidden>
+        <div class="site-header__progress-track">
+          <div class="site-header__progress-fill" id="headerProgressFill" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 1. Hero / Age Gate -->
+    <section class="section section--hero">
+      <div class="age-icon">
+        <img src="21.png" alt="21+" />
+      </div>
+      <h1 class="heading-1">Eits tunggu dulu, Anda dilarang masuk jika berusia dibawah 21 tahun!</h1>
+      <button class="btn btn--primary btn--primary-lg">👉 Saya Sudah Berusia 21+</button>
+    </section>
+
+    <!-- 2. Intent Discovery -->
+    <section class="section">
+      <div style="text-align:center;margin-bottom:20px">
+        <img src="gambar1.png" alt="Tujuan Utama" style="max-width:220px;width:100%;height:auto;">
+      </div>
+      <h2 class="heading-2 heading-2--mb-6">Apa tujuan utama Anda? 😈</h2>
+      <div class="grid grid--1">
+        <button class="btn btn--primary">Ereksi Lebih Kuat dan lebih keras</button>
+        <button class="btn btn--primary">Saya ingin membuat wanita squirting</button>
+        <button class="btn btn--primary">Saya ingin jadi pria hebat di ranjang</button>
+        <button class="btn btn--primary">Saya ingin memberikan multiple orgasme</button>
+      </div>
+    </section>
+
+    <!-- 3. Self Assessment -->
+    <section class="section">
+      <div style="text-align:center;margin-bottom:20px">
+        <img src="gambar2.png" alt="Self Assessment" style="max-width:220px;width:100%;height:auto;">
+      </div>
+      <h2 class="heading-2 heading-2--mb-6">Apakah Anda merasa Anda pria hebat di ranjang?</h2>
+      <div class="grid grid--1">
+        <button class="btn btn--primary">Ya, tentu saja 😌</button>
+        <button class="btn btn--primary">Lumayan 😅</button>
+        <button class="btn btn--primary">Saya gak terlalu yakin 🤦‍♂️</button>
+      </div>
+    </section>
+
+    <!-- 4. Pain Point -->
+    <section class="section">
+      <div style="text-align:center;margin-bottom:20px">
+        <img src="gambar7.png" alt="Pain Point" style="max-width:220px;width:100%;height:auto;">
+      </div>
+      <h2 class="heading-2 heading-2--mb-6">Bagaimana Anda menilai performa Anda saat berhubungan seksual?</h2>
+      <div class="grid grid--1">
+        <button class="btn btn--primary">Sangat gak puas 😥</button>
+        <button class="btn btn--primary">Gak puas 😕</button>
+        <button class="btn btn--primary">Cukup 😐</button>
+        <button class="btn btn--primary">Puas 😌</button>
+        <button class="btn btn--primary">Sangat puas 😍</button>
+      </div>
+    </section>
+
+    <!-- 5. Awareness -->
+    <section class="section">
+      <div style="text-align:center;margin-bottom:20px">
+        <img src="gambargif.gif" alt="Awareness" style="max-width:220px;width:100%;height:auto;">
+      </div>
+      <h2 class="heading-2 heading-2--mb-6">Apakah Anda pernah mendengar tentang <span class="text-accent">Squirting</span>?</h2>
+      <div class="grid grid--1">
+        <button class="btn btn--primary">Ya, saya sudah tahu 😏</button>
+        <button class="btn btn--primary">Tidak, belum pernah tahu 🤔</button>
+      </div>
+    </section>
+
+    <!-- 6. Education -->
+    <section class="section">
+      <h2 class="heading-2">Apa itu Squirt?</h2>
+      <img src="gambar3.png" alt="gambar" class="img-rounded img-rounded--mb-6" />
+      <p class="callout">
+        <strong class="font-bold">Squirt</strong> adalah kondisi ketika sebagian wanita mengeluarkan cairan bening seperti air mancur saat orgasme atau sangat terangsang. Di saat itulah wanita merasakan puncak kenikmatan. Anda bisa membuat wanita squirt!
+      </p>
+      <div class="grid grid--1-gap-3 sticky-bottom">
+        <button class="btn btn--primary">Saya Mengerti 👉</button>
+      </div>
+    </section>
+
+    <!-- 7. Curiosity -->
+    <section class="section">
+      <div style="text-align:center;margin-bottom:20px">
+        <img src="gambar4.png" alt="Curiosity" style="max-width:220px;width:100%;height:auto;">
+      </div>
+      <h2 class="heading-2 heading-2--mb-6">Menurut Anda, apakah mempelajari teknik rahasia ini adalah bagian yang selama ini Anda butuhkan untuk memberikan kenikmatan kepada pasangan?</h2>
+      <div class="grid grid--1">
+        <button class="btn btn--primary">Ya, saya selalu penasaran 😈</button>
+        <button class="btn btn--primary">Ya, tapi gak tau harus mulai dari mana</button>
+        <button class="btn btn--primary">Saya belum pernah memikirkannya</button>
+      </div>
+    </section>
+
+    <!-- 8. Belief Shift -->
+    <section class="section">
+      <h2 class="heading-2">Penilitian menyebutkan bahwa hanya 1 dari 10 wanita yang bisa squirting.</h2>
+      <img src="gambarwanita.png" alt="gambar" class="img-rounded img-rounded--mb-6" />
+      <p class="callout">
+        <strong class="font-bold">Tapi jangan khawatir!</strong> Ada teknik rahasia untuk membuat wanita squirting, dan hanya sedikit pria yang mengetahui!
+      </p>
+      <div class="grid grid--1-gap-3 sticky-bottom">
+        <button class="btn btn--primary">Hem... Saya makin penasaran 👉</button>
+      </div>
+    </section>
+
+    <!-- 9. Social Proof -->
+    <section class="section">
+      <h2 class="heading-2 heading-2--mb-6">Kalau Anda tahu caranya membuat wanita squirting, bagaimana kehidupan seks Anda dan pasangan akan berubah?</h2>
+      <div class="grid grid--1">
+        <button class="btn btn--primary">Pasangan pasti senang 😮</button>
+        <button class="btn btn--primary">Akan jadi lebih menarik</button>
+      </div>
+    </section>
+
+    <!-- 10. Future Pacing -->
+    <section class="section">
+      <h2 class="heading-2 heading-2--mb-6">Menurut Anda, apakah menguasai teknik ini adalah hal yang selama ini Anda butuhkan untuk jadi pria hebat di ranjang?</h2>
+      <div class="grid grid--1">
+        <button class="btn btn--primary">Ya, jelas dong 😎</button>
+        <button class="btn btn--primary">Saya belum yakin, tapi mau belajar ❤️</button>
+      </div>
+    </section>
+
+    <!-- 11. Commitment -->
+    <section class="section">
+      <div style="text-align:center;margin-bottom:20px">
+        <img src="gambar5.png" alt="Commitment" style="max-width:220px;width:100%;height:auto;">
+      </div>
+      <h2 class="heading-2 heading-2--mb-6">Apakah Anda ingin mempelajari teknik yang bisa langsung dipraktikkan malam ini?</h2>
+      <div class="grid grid--1">
+        <button class="btn btn--primary">Ya, tentu 😈</button>
+        <button class="btn btn--primary">Saya tertarik</button>
+      </div>
+    </section>
+
+    <!-- 12. Preview -->
+    <section class="section">
+      <h2 class="heading-2">Cuplikan Gratis! 🤤 Lihat Sendiri Bagaimana Teknik Bertemu di Ranjang Diajarkan…</h2>
+      <p class="text-center text-body text-body--mb-6">
+        Ini baru <strong class="text-red-strong">1 dari 26 video</strong> orgasmic massages techniques <strong class="text-red-strong">panduan lengkap</strong> yang akan Anda kuasai... 😏
+      </p>
+      <div class="video-embed">
+        <iframe src="video2.mp4" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true" width="640" height="480"></iframe>
+      </div>
+      <p class="text-lead text-center">Bagaimana menurut Anda?</p>
+      <div class="grid grid--1-gap-3">
+        <button class="btn btn--primary track-content">Sangat menarik 🤤</button>
+        <button class="btn btn--primary track-content">Saya ingin mencoba teknik ini</button>
+        <button class="btn btn--primary track-content">Saya penasaran lanjutannya</button>
+      </div>
+    </section>
+
+    <!-- 13. Desire Amplification -->
+    <section class="section">
+      <h2 class="heading-2 heading-2--mb-6">87% pria yang menguasai dan menerapkan teknik ini berhasil membuat wanita squirt dalam beberapa menit!</h2>
+      <div class="image-wrapper">
+        <img src="gambar6.png" alt="Ilustrasi" class="section-image">
+      </div>
+      <div class="grid grid--1">
+        <button class="btn btn--primary">Selanjutnya 🔥</button>
+      </div>
+    </section>
+
+    <!-- 14. Confidence Framing -->
+    <section class="section">
+      <h2 class="heading-2 heading-2--mb-6">Menurut Anda, apakah skill intimacy seperti ini bisa dipelajari?</h2>
+      <div class="image-wrapper">
+        <img src="gambar7.png" alt="Ilustrasi" class="section-image">
+      </div>
+      <div class="grid grid--1">
+        <button class="btn btn--primary">Ya, pasti bisa</button>
+        <button class="btn btn--primary">Kalau diajarkan step-by-step, bisa</button>
+        <button class="btn btn--primary">Saya belum yakin</button>
+      </div>
+    </section>
+
+    <!-- 15. Emotional Connection -->
+    <section class="section">
+      <h2 class="heading-2 heading-2--mb-6">Apa yang paling Anda inginkan dari hubungan intim dengan pasangan?</h2>
+      <div class="grid grid--1">
+        <button class="btn btn--primary">Kedekatan emosional ❤️</button>
+        <button class="btn btn--primary">Pasangan merasa puas 😈</button>
+        <button class="btn btn--primary">Hubungan lebih harmonis</button>
+        <button class="btn btn--primary">Semua di atas 😍</button>
+      </div>
+    </section>
+
+    <!-- 16. CTA Qualification -->
+    <section class="section">
+      <h2 class="heading-2 heading-2--mb-6">Apakah Anda ingin mendapatkan akses ke 26 video rahasia disertai panduan premium dan luar biasa di ranjang? Kuasa teknik ini dan buat wanita semakin tergila-gila padamu!</h2>
+      <div class="question-image">
+        <img src="tutor.png" alt="Ilustrasi" />
+      </div>
+      <div class="grid grid--1">
+        <button class="btn btn--primary">Ya, tentu saja 🔥</button>
+        <button class="btn btn--primary">Akses Sekarang</button>
+      </div>
+    </section>
+
+    <!-- 17. Loader -->
+    <section id="loader" class="section">
+      <h2 class="heading-2">Sedang menganalisis jawaban Anda...</h2>
+      <p id="progressStage" class="text-loader">Mengumpulkan data...</p>
+      <div class="progress">
+        <div class="progress__track">
+          <div id="progressBar" class="progress__fill" style="width:0%"></div>
+        </div>
+        <p id="progressText" class="text-progress">0%</p>
+      </div>
+    </section>
+
+    <!-- 18. Final Offer Bridge -->
+    <section class="section">
+      <h2 class="heading-2 heading-2--mb-6">Berdasarkan jawaban Anda, Video Panduan Bertemu di Ranjang ini sangat cocok untuk Anda 😈</h2>
+      <div class="grid grid--1 sticky-bottom">
+        <button class="btn btn--primary">Lihat Penawaran Spesial 👉</button>
+      </div>
+    </section>
+
+    <!-- 19. Sales Page -->
+    <section class="section section--no-x">
+      <h2 class="heading-2">26 Video Orgasmic Massages Techniques - Step By Step Tanpa Sensor 🔥</h2>
+      <p class="text-center text-body text-body--mb-6">
+        Nikmati Setiap Momen Foreplay Seperti di Film BL*E - Dijamin Banjir Bandang 🔥
+      </p>
+      <h3 class="heading-3">YANG AKAN ANDA DAPATKAN</h3>
+
+      <!-- Bundling utama (kartu besar) -->
+      <div class="package-card" style="margin-bottom: var(--space-4);">
+        <img src="coverbundlingnew.png" alt="Bundling Premium" class="img-rounded img-rounded--mb-4" />
+        <h3 class="heading-3--package">Bundling Premium Eksklusif - Skill Gigolo 11 Tahun</h3>
+        <p>Temukan strategi, psikologi, komunikasi, dan keintiman dalam satu paket eksklusif. Panduan praktis berbasis pengalaman nyata untuk membangun hubungan lebih percaya diri, harmonis, dan berkesan.</p>
+        <div class="price-pill">Senilai Rp368.000</div>
+      </div>
+
+      <!-- Kartu-kartu item -->
+      <div class="cards-list">
+
+        <div class="package-card package-card--row">
+          <img src="cover7.png" alt="Pengakuan 11 Tahun Menjadi Gigolo" class="package-card__thumb" />
+          <div class="package-card__content">
+            <div class="package-label">🏆 Elite Mastery Series</div>
+            <h3 class="package-title">Pengakuan 11 Tahun Menjadi Gigolo</h3>
+            <p class="package-desc">Kisah nyata 11 tahun menjadi gigolo yang membuka tabir psikologi wanita, dinamika hubungan, dan kenyataan yang tak pernah diceritakan.</p>
+            <div class="package-footer">
+              <div class="price-box"><span class="price-old">Senilai Rp289.000</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="package-card package-card--row">
+          <img src="cover12.PNG" alt="Audio Brainwaves Premium" class="package-card__thumb" />
+          <div class="package-card__content">
+            <div class="package-label">✨ Premium Digital Library</div>
+            <h3 class="package-title">Audio Brainwaves Premium Attract Love & Sacred Body</h3>
+            <p class="package-desc">Masuki frekuensi relaksasi yang menenangkan pikiran dan tubuh. Audio premium ini dirancang untuk membantu Anda merasa lebih tenang, percaya diri, dan terbuka pada energi cinta positif..</p>
+            <div class="package-footer">
+              <div class="price-box"><span class="price-new">Senilai Rp129.000</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="package-card package-card--row">
+          <img src="cover2.png" alt="Kitab Rahasia Klitoris" class="package-card__thumb" />
+          <div class="package-card__content">
+            <div class="package-label">✨ Premium Digital Library</div>
+            <h3 class="package-title">Kitab Rahasia Klitoris</h3>
+            <p class="package-desc">Panduan praktis memahami anatomi, sentuhan, dan teknik yang membantu pasangan membangun keintiman lebih dalam serta menciptakan pengalaman yang lebih memuaskan.</p>
+            <div class="package-footer">
+              <div class="price-box"><span class="price-new">Senilai Rp99.000</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="package-card package-card--row">
+          <img src="cover3.png" alt="Rahasia Jago Squirting" class="package-card__thumb" />
+          <div class="package-card__content">
+            <div class="package-label">📖 Masterclass Digital Library</div>
+            <h3 class="package-title">Rahasia Jago Squirting</h3>
+            <p class="package-desc">Pelajari anatomi, stimulasi, dan teknik yang tepat untuk meningkatkan kepercayaan diri, kedekatan, dan pengalaman intim yang lebih berkesan bersama pasangan.</p>
+            <div class="package-footer">
+              <div class="price-box"><span class="price-new">Senilai Rp129.000</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="package-card package-card--row">
+          <img src="cover5.png" alt="Posisi Rahasia Dibalik Squirting" class="package-card__thumb" />
+          <div class="package-card__content">
+            <div class="package-label">📖 Masterclass Digital Library</div>
+            <h3 class="package-title">Posisi Rahasia Dibalik Squirting</h3>
+            <p class="package-desc">Real pic tanpa sensor yang membantu pasangan semakin bergairah.</p>
+            <div class="package-footer">
+              <div class="price-box"><span class="price-new">Senilai Rp69.000</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="package-card package-card--row">
+          <img src="cover6.png" alt="200 Intim Position" class="package-card__thumb" />
+          <div class="package-card__content">
+            <div class="package-label">🔥 Private Insider Collection</div>
+            <h3 class="package-title">200 Intim Position</h3>
+            <p class="package-desc">Temukan inspirasi keintiman romantis untuk mempererat hubungan, membangun keharmonisan, dan menciptakan momen spesial bersama pasangan tercinta.</p>
+            <div class="package-footer">
+              <div class="price-box"><span class="price-old">Senilai Rp250.000</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="package-card package-card--row">
+          <img src="cover9.png" alt="26 Video Real Tanpa Sensor" class="package-card__thumb" />
+          <div class="package-card__content">
+            <div class="package-label">👑 Ultimate Premium Collection</div>
+            <h3 class="package-title">26 Video Real Tanpa Sensor - Orgasmic Massages Techniques</h3>
+            <p class="package-desc">Temukan seni pijat relaksasi premium yang membantu membangun kedekatan, kenyamanan, dan momen berkualitas melalui panduan video praktis.</p>
+            <div class="package-footer">
+              <div class="price-box"><span class="price-old">Senilai Rp269.000</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.cards-list -->
+
+      <!-- Pricing box -->
+      <div class="pricing-box">
+        <div class="pricing-box__ribbon">CLAIM DISKON 66% SAAT INI</div>
+        <div class="pricing-box__body">
+          <p>Total Harga</p>
+          <p class="text-emphasis">Video Tutorial + Bonus Ebook + Audio Brainwaves Premium</p>
+          <p class="price-strike">Rp1.088.000</p>
+          <p>Saat ini cuma</p>
+          <p class="price-live">Rp368.000</p>
+        </div>
+      </div>
+
+      <!-- CTA tunggal -->
+      <div class="cta-wiggle">
+        <a href="https://kawan.digital/bertemudiranjang/bundles/bundle-premium-eksklusif-skill-11-tahun-menjadi-gigolo" class="cta-link">
+          Ya, Kirim Panduannya Sekarang!
         </a>
       </div>
-    </div>
-  </div>
 
-  <!-- PRODUCTS SECTION -->
-  <div class="sec">
-    <span class="sec-label">Produk</span>
-    <span class="sec-line"></span>
-  </div>
+      <div class="cta-wiggle" style="margin-top:2rem;">
+        <h2 class="heading-2">Anda juga dapat membeli satu diantaranya saja dengan harga yang lebih murah, mungkin Anda belum ada dana saat ini.</h2>
+          <p class="text-center text-body text-body--mb-6">
+        Harga Mulai Rp69.000
+          </p>
+      </div>
 
-  <div class="grid">
+      <div class="cta-wiggle">
+        <a href="https://bertemudiranjangstore.vercel.app/" class="cta-link" style="background:#f59e0b;box-shadow:0 4px 0 #b45309;color:#000;">
+            Ya, beri pilihan yang murah!
+        </a>
+      </div>
 
-    <div class="product">
-      <div class="pimg-wrap">
-        <img src="cover7.png" alt="Mereka Tidak Datang Untuk Cinta">
-        <span class="badge">Ebook</span>
+      <!-- Testimonial & info -->
+      <div class="stack stack--3 stack--mt-6">
+        <div class="testimonial">
+          <div class="testimonial__meta">
+            <div class="text-small">⭐⭐⭐⭐</div>
+            <div class="testimonial__name">I**n R**y</div>
+          </div>
+          <p>"Awalnya cuma iseng beli, ternyata isinya berbobot. Banyak hal yang sebelumnya saya nggak tahu. Setelah dicoba, pasangan jadi lebih nyaman dan kami jadi lebih dekat. Terima kasih kak 🙏😊"</p>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__meta">
+            <div class="text-small">⭐⭐⭐⭐</div>
+            <div class="testimonial__name">W**u Ja**i</div>
+          </div>
+          <p>"Komentar istri bikin semangat: <span class="text-accent font-bold">Kok sekarang beda ya? Aku suka 😄</span> Baru praktik sedikit sudah kerasa bedanya."</p>
+        </div>
+        <div class="info-card">
+          <h2>Privasi Aman 100%</h2>
+          <p>Materi bersifat rahasia dan hanya dapat diakses oleh pembeli.</p>
+        </div>
+        <div class="info-card">
+          <h2>Akses instant melalui Email</h2>
+          <p>Kamu akan menerima akses langsung melalui email. Bisa langsung praktek malam ini juga.</p>
+        </div>
       </div>
-      <div class="p-content">
-        <h4 class="p-title">Mereka Tidak Datang Untuk Cinta</h4>
-        <p class="p-desc">Pengakuan 11 Tahun Menjadi Gigolo</p>
-        <p class="p-price">Rp 289.000</p>
-        <a class="btn-buy" href="https://kawan.digital/bertemudiranjang/mereka-tidak-datang-untuk-cinta-pengakuan-11-tahun-menjadi-gigolo/checkout" target="_blank">Beli Sekarang</a>
-      </div>
-    </div>
 
-    <div class="product">
-      <div class="pimg-wrap">
-        <img src="cover11.jpg" alt="Panduan Master 7 Detik">
-        <span class="badge">Ebook</span>
-      </div>
-      <div class="p-content">
-        <h4 class="p-title">Panduan Master 7 Detik</h4>
-        <p class="p-desc">Meluluhkan Hati & Merangsang Tubuh Wanita</p>
-        <p class="p-price">Rp 123.000</p>
-        <a class="btn-buy" href="https://kawan.digital/bertemudiranjang/perangsang-wanita-dalam-7-detik/checkout" target="_blank">Beli Sekarang</a>
-      </div>
-    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("section");
+        const lastSectionIndex = sections.length - 1;
+        const totalSteps = sections.length - 1;
+        const headerProgress = document.getElementById("headerProgress");
+        const headerProgressFill = document.getElementById("headerProgressFill");
+        let currentSectionIndex = 0;
+        let loaderInterval = null;
 
-    <div class="product">
-      <div class="pimg-wrap">
-        <img src="cover12.PNG" alt="Audio Brainwaves Premium">
-        <span class="badge">Audio</span>
-      </div>
-      <div class="p-content">
-        <h4 class="p-title">Audio Brainwaves Premium</h4>
-        <p class="p-desc">Attract Love & Sacred Body</p>
-        <p class="p-price">Rp 129.000</p>
-        <a class="btn-buy" href="https://richcreatornusantara187.form.id/brainwave" target="_blank">Beli Sekarang</a>
-      </div>
-    </div>
+        function updateHeader() {
+          const onFirstPage = currentSectionIndex === 0;
+          headerProgress.hidden = onFirstPage;
+          document.body.classList.toggle("has-header-progress", !onFirstPage);
+          if (!onFirstPage) {
+            const percent = Math.min(100, Math.round((currentSectionIndex / totalSteps) * 100));
+            headerProgressFill.style.width = percent + "%";
+            headerProgressFill.setAttribute("aria-valuenow", String(percent));
+          }
+        }
 
-    <div class="product">
-      <div class="pimg-wrap">
-        <img src="cover5.png" alt="Posisi Rahasia Dibalik Squirting">
-        <span class="badge">Ebook</span>
-      </div>
-      <div class="p-content">
-        <h4 class="p-title">Posisi Rahasia Dibalik Squirting</h4>
-        <p class="p-desc">Panduan posisi terbaik.</p>
-        <p class="p-price">Rp 69.000</p>
-        <a class="btn-buy" href="https://kawan.digital/bertemudiranjang/posisi-rahasia-dibalik-squirting/checkout" target="_blank">Beli Sekarang</a>
-      </div>
-    </div>
+        function clearLoader() {
+          if (loaderInterval) { clearInterval(loaderInterval); loaderInterval = null; }
+        }
 
-    <div class="product">
-      <div class="pimg-wrap">
-        <img src="cover1.png" alt="Hamil? Malah lebih nikmat.">
-        <span class="badge">Ebook</span>
-      </div>
-      <div class="p-content">
-        <h4 class="p-title">Hamil? Malah lebih nikmat.</h4>
-        <p class="p-desc">Panduan untuk calon ayah dan ibu.</p>
-        <p class="p-price">Rp 99.000</p>
-        <a class="btn-buy" href="https://kawan.digital/bertemudiranjang/the-queens-influence/checkout" target="_blank">Beli Sekarang</a>
-      </div>
-    </div>
+        sections.forEach((section, index) => { if (index !== 0) section.style.display = "none"; });
+        sections[0].classList.add("section--enter");
+        updateHeader();
 
-    <div class="product">
-      <div class="pimg-wrap">
-        <img src="cover2.png" alt="Kitab Rahasia Klitoris">
-        <span class="badge">Ebook</span>
-      </div>
-      <div class="p-content">
-        <h4 class="p-title">Kitab Rahasia Klitoris</h4>
-        <p class="p-desc">Panduan memahami sentuhan.</p>
-        <p class="p-price">Rp 99.000</p>
-        <a class="btn-buy" href="https://kawan.digital/bertemudiranjang/kitab-rahasia-klitoris/checkout" target="_blank">Beli Sekarang</a>
-      </div>
-    </div>
+        function showSection(index) {
+          if (!sections[index]) return;
+          clearLoader();
+          sections.forEach((section, i) => {
+            if (i === index) {
+              section.style.display = "block";
+              section.classList.remove("section--enter");
+              void section.offsetWidth;
+              section.classList.add("section--enter");
+            } else {
+              section.style.display = "none";
+              section.classList.remove("section--enter");
+            }
+          });
+          currentSectionIndex = index;
+          updateHeader();
+          if (sections[index].id === "loader") startLoader(index);
+        }
 
-    <div class="product">
-      <div class="pimg-wrap">
-        <img src="cover3.png" alt="Rahasia Jago Squirting">
-        <span class="badge">Ebook</span>
-      </div>
-      <div class="p-content">
-        <h4 class="p-title">Rahasia Jago Squirting</h4>
-        <p class="p-desc">Pelajari teknik stimulasi.</p>
-        <p class="p-price">Rp 129.000</p>
-        <a class="btn-buy" href="https://kawan.digital/bertemudiranjang/rahasia-jago-squirting/checkout" target="_blank">Beli Sekarang</a>
-      </div>
-    </div>
+        function startLoader(currentIndex) {
+          const progressBar = document.getElementById("progressBar");
+          const progressText = document.getElementById("progressText");
+          const progressStage = document.getElementById("progressStage");
+          progressBar.style.width = "0%";
+          progressText.textContent = "0%";
+          progressStage.textContent = "Mengumpulkan data...";
+          let progress = 0;
+          loaderInterval = setInterval(() => {
+            let increment;
+            if (progress < 35) { progressStage.textContent = "Mengumpulkan data..."; increment = Math.random() * 6 + 4; }
+            else if (progress < 72) { progressStage.textContent = "Menganalisis jawaban..."; increment = Math.random() * 3 + 1.5; }
+            else { progressStage.textContent = "Menyusun rekomendasi terbaik..."; increment = Math.random() * 1 + 0.3; }
+            progress += increment;
+            if (progress >= 100) {
+              progress = 100;
+              progressBar.style.width = "100%";
+              progressText.textContent = "100%";
+              clearLoader();
+              setTimeout(() => showSection(currentIndex + 1), 600);
+              return;
+            }
+            progressBar.style.width = progress + "%";
+            progressText.textContent = Math.round(progress) + "%";
+          }, 120);
+        }
 
-    <div class="product">
-      <div class="pimg-wrap">
-        <img src="cover4.png" alt="The Queen's Influence">
-        <span class="badge">Ebook</span>
-      </div>
-      <div class="p-content">
-        <h4 class="p-title">The Queen's Influence</h4>
-        <p class="p-desc">Komunikasi dan daya tarik.</p>
-        <p class="p-price">Rp 99.000</p>
-        <a class="btn-buy" href="https://kawan.digital/bertemudiranjang/the-queens-influence/checkout" target="_blank">Beli Sekarang</a>
-      </div>
-    </div>
+        sections.forEach((section, index) => {
+          section.querySelectorAll("button").forEach(button => {
+            button.addEventListener("click", () => showSection(index + 1));
+          });
+        });
 
-    <div class="product">
-      <div class="pimg-wrap">
-        <img src="cover8.png" alt="Resep Ramuan Herbal Vitalitas Pria">
-        <span class="badge">Ebook</span>
-      </div>
-      <div class="p-content">
-        <h4 class="p-title">Resep Ramuan Herbal Vitalitas Pria</h4>
-        <p class="p-desc">Ramuan tradisional terbaik.</p>
-        <p class="p-price">Rp 24.000</p>
-        <a class="btn-buy" href="https://kawan.digital/bertemudiranjang/vitalitas-pria/checkout" target="_blank">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="product">
-      <div class="pimg-wrap">
-        <img src="cover10.png" alt="Tahan Lama & Lebih Besar">
-        <span class="badge">Ebook</span>
-      </div>
-      <div class="p-content">
-        <h4 class="p-title">Tahan Lama &amp; Lebih Besar</h4>
-        <p class="p-desc">Panduan pengembangan diri.</p>
-        <p class="p-price">Rp 48.500</p>
-        <a class="btn-buy" href="https://kawan.digital/bertemudiranjang/panduan-tahan-lama-memperbesar-penis-tanpa-obat-obatan/checkout" target="_blank">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="product">
-      <div class="pimg-wrap">
-        <img src="cover6.png" alt="200 Intim Position">
-        <span class="badge">Ebook</span>
-      </div>
-      <div class="p-content">
-        <h4 class="p-title">200 Intim Position</h4>
-        <p class="p-desc">Real pic tanpa sensor.</p>
-        <p class="p-price">Rp 250.000</p>
-        <a class="btn-buy" href="https://kawan.digital/bertemudiranjang/200-intim-position/checkout" target="_blank">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="product">
-      <div class="pimg-wrap">
-        <img src="cover9.png" alt="26 Video Real Tanpa Sensor">
-        <span class="badge">Video</span>
-      </div>
-      <div class="p-content">
-        <h4 class="p-title">26 Video Real Tanpa Sensor</h4>
-        <p class="p-desc">Orgasmic Massages Techniques.</p>
-        <p class="p-price">Rp 269.000</p>
-        <a class="btn-buy" href="https://kawan.digital/bertemudiranjang/26-video-real-tanpa-sensor-orgasmic-massages-techniques/checkout" target="_blank">Beli Sekarang</a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Bertemu di Ranjang. Hak cipta dilindungi.</p>
-    <div class="footer-links">
-      <a href="#">Kebijakan Privasi</a>
-      <a href="#">Syarat &amp; Ketentuan</a>
-      <a href="#">Kebijakan Pengembalian</a>
-    </div>
-    <p class="powered">Powered by<b>Rich Creator Nusantara</b></p>
-  </footer>
-
-</div>
-
-</body>
+        const params = window.location.search;
+        if (params) {
+          document.querySelectorAll(".cta-link").forEach(link => { link.href += params; });
+        }
+      });
+    </script>
+  </body>
 </html>
